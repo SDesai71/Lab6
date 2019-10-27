@@ -14,3 +14,22 @@ script:
 before_script:
   - composer install --prefer-source
 
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "AYDMCiEKtT/IrPA9nyU9l7rW4Lue5FKUyjMCCKrm1Lu0eAuLuwNa++nyyFfCi/cMHM1eNcraaNw5JZBZC+tjXdRs32t2+Ald8kg8KpGgYRthDJXkptSZh57Iyqwvfrk//itGU38Pxrnzj5NxCaGk6iuYbvbwwtYeOw7zLKSZsFLJhr42Muohg8wHerKHLL6YgUMKk7eOzdLkh8kAl2kjDdbSzTzgM7QYgsrQZZvtaoHzQJp9EHHEEW83YoaKQQW98Qg2U/eDFP+ZEyCjAA1m7S1Gf/KjjIgs/8nO8Kf6yExjaK1Fl+UZ5BrANMFjZ5vLmwDPZSyFCR/+41708l59/a1gq5oopzfR5CZ1ByIJdNxj4CABJeujQMd7RuIKwdSnSXaHWT8YsvaZhJ7rvCu+mLrKxxlt1vLSeTNJ6Lws9RS7vxMdi6MrV6LHwv0nUiRC99FFFWmJMqBhE0g2qJhOxAOUELW4Dk01OguN0hEFXjMC3+E02wvmRuOSAvQAEq8EguZp1o3RmRwWPbDrv9EAYAy6RuPQkFsddw1W0HTPtAPErO1BTWlNlRTX4gQnsj7PTsylNkAUszS9i715f/3quf/LuUZ+rJszNG8OLSIIDtuZEwZG0nohnJ51Haqbv0IjkygbPFvNSeJFcEPDzRfmB+4Nv+3J8hxGrIjTetXrH/A="
+
+before_install:
+  - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
+addons:
+  coverity_scan:
+    project:
+      name: "SDesai71/Lab6"
+      description: "<Your project description here>"
+    notification_email: sdesai10@my.bcit.ca
+    build_command_prepend: "<Your build preprocessing command here>"
+    build_command: "<Your build command here>"
+    branch_pattern: coverity_scan
+
