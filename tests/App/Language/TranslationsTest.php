@@ -67,7 +67,7 @@ class TranslationsTest extends TestCase
 	 * For a given translation locale found, make sure that each translation
 	 * set has the appropriate keys for a complete translation.
 	 * This is relaxed for sublocales (eg fr-CA), which are only
-	 * expected to provide variations for a parent locale....
+	 * expected to provide variations for a parent locale...lskadh.
 	 * 
 	 * @dataProvider translations
 	 */
