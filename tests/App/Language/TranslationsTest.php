@@ -18,7 +18,7 @@ class TranslationsTest extends TestCase
 	 */
 	public function translations()
 	{
-		$dir = getcwd() . '/Language/';
+		$dir = getcwd() . 'Lab6/app/Language/';
 		$dh = opendir($dir);
 		$sets = [];
 		while (($file = readdir($dh)) !== false)
