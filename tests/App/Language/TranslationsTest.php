@@ -156,7 +156,7 @@ class TranslationsTest extends TestCase
 	}
 
 	/**
-	 * Load a set of translations, from the repo or "stock".
+	 * Load a set of translations, from the repo or "stock/".
 	 * 
 	 * @return []
 	 */
