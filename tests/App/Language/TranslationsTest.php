@@ -18,7 +18,7 @@ class TranslationsTest extends TestCase
 	 */
 	public function translations()
 	{
-		$dir = getcwd() . "'/app/Language/'";
+		$dir = getcwd() . 'app/Language/';
 		$dh = opendir($dir);
 		$sets = [];
 		while (($file = readdir($dh)) !== false)
@@ -67,7 +67,7 @@ class TranslationsTest extends TestCase
 	 * For a given translation locale found, make sure that each translation
 	 * set has the appropriate keys for a complete translation.
 	 * This is relaxed for sublocales (eg fr-CA), which are only
-	 * expected to provide variations for a parent locale....
+	 * expected to provide variations for a parent locale.
 	 * 
 	 * @dataProvider translations
 	 */
@@ -142,7 +142,7 @@ class TranslationsTest extends TestCase
 	 */
 	public function foundSets($locale)
 	{
-		$dir = getcwd() . "'/app/Language/'" . $locale . '/';
+		$dir = getcwd() . 'app/Language/' . $locale . '/';
 		$dh = opendir($dir);
 		$sets = [];
 		while (($file = readdir($dh)) !== false)
@@ -162,7 +162,7 @@ class TranslationsTest extends TestCase
 	 */
 	public function loadKeys($which, $locale = null)
 	{
-		$folder = $locale ? getcwd() . "'/app/Language/'" . $locale . '/' :
+		$folder = $locale ? getcwd() . 'app/Language/' . $locale . '/' :
 				getcwd() . 'app/Language/en';
 		$file = $folder . $which;
 		$keys = require $file;
