@@ -1,7 +1,7 @@
 <?php
-namespace App\Language;
+namespace 'App/Language';
 
-use PHPUnit\Framework\TestCase;
+use 'PHPUnit/Framework/TestCase';
 
 class TranslationsTest extends TestCase
 {
